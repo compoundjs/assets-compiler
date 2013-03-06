@@ -1,0 +1,31 @@
+{
+  "name": "assets-compiler",
+  "version": "0.0.1",
+  "description": "Assets compiler for CompoundJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "dependencies": {
+    "uglify-js":">= 2.2.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/compoundjs/assets-compiler.git"
+  },
+  "repository": "",
+  "keywords": [
+    "assets",
+    "coffee",
+    "stylus",
+    "sass",
+    "less",
+    "compile",
+    "minify",
+    "compound",
+    "express",
+    "middleware"
+  ],
+  "author": "Sascha Gehlich <sascha@gehlich.us>",
+  "license": "MIT"
+}
