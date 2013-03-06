@@ -1,5 +1,5 @@
 {
-  "name": "assets-compiler",
+  "name": "co-assets-compiler",
   "version": "0.0.1",
   "description": "Assets compiler for CompoundJS",
   "main": "index.js",
