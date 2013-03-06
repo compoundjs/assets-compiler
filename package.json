@@ -9,6 +9,13 @@
   "dependencies": {
     "uglify-js":">= 2.2.5"
   },
+  "devDependencies": {
+    "mocha": "1.8.1",
+    "should": "1.2.2",
+    "semicov": "0.1.1",
+    "compound": "1.x",
+    "express": "3.x"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/compoundjs/assets-compiler.git"
