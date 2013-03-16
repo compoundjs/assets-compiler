@@ -14,7 +14,8 @@
     "should": "1.2.2",
     "semicov": "0.1.1",
     "compound": "1.x",
-    "express": "3.x"
+    "express": "3.x",
+    "stylus": "0.32.1"
   },
   "repository": {
     "type": "git",
