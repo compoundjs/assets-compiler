@@ -2,8 +2,12 @@ var fs = require('fs')
   , path = require('path');
 
 describe('assets-compiler', function() {
-  describe('merging', function() {
-    it('should merge stylesheets', function (done) {
+
+  describe('precompilation', function() {
+
+    it('should precompile stylesheets', function (done) {
+      invalidateRequireCache(); // To get a fresh compound app
+
       var app = getApp();
       var compound = app.compound;
 
@@ -26,8 +30,38 @@ describe('assets-compiler', function() {
           done();
         });
       }, 500);
+
     });
+
+    it('should precompile coffeescripts', function (done) {
+      invalidateRequireCache(); // To get a fresh compound app
+
+      var app = getApp();
+      var compound = app.compound;
+
+      // App settings
+      app.set('jsDirectory', '/javascripts');
+      app.enable('merge javascripts');
+
+      // Make sure previously precompiled assets are deleted
+      var jsDir = app.root + '/public/javascripts';
+      ensureDirClean(jsDir);
+
+      // Wait some time for precompiler to finish
+      // TODO: Replace this with an event
+      setTimeout(function () {
+        fs.existsSync(path.resolve(jsDir, 'application.js')).should.be.true;
+
+        // Clean up
+        ensureDirClean(jsDir, function() {
+          done();
+        });
+      }, 500);
+
+    });
+
   });
+
 });
 
 function ensureDirClean(dir, callback) {
@@ -35,7 +69,9 @@ function ensureDirClean(dir, callback) {
     fs.exists(dir, function(exists) {
         if (exists) {
             fs.readdir(dir, function(err, files) {
-                files.map(function(file) {
+                files.filter(function (file) {
+                    return file.substr(0, 1) !== '.'
+                }).map(function(file) {
                     return path.join(dir, file);
                 }).forEach(fs.unlinkSync);
 
@@ -47,3 +83,10 @@ function ensureDirClean(dir, callback) {
         }
     });
 }
+
+
+function invalidateRequireCache() {
+  Object.keys(require.cache).forEach(function (key) {
+    delete require.cache[key];
+  });
+};
