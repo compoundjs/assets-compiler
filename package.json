@@ -41,5 +41,11 @@
     "middleware"
   ],
   "author": "Sascha Gehlich <sascha@gehlich.us>",
+  "contributors": [{
+    "name": "Dmitry Erman",
+    "email": "dmitry.erman@gmail.com",
+    "web": "https://github.com/dmitrye"
+    }
+  ],
   "license": "MIT"
 }
