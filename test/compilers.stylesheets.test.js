@@ -100,23 +100,20 @@ describe('assets-compiler', function() {
       utils.ensureDirClean(cssDir);
 
       // Fake a stylesheet request
-      request(app).get('/stylesheets/application.css').end(function(err,res){
-          utils.ensureDirClean(cssDir);
-        done();
-      });
-//      request(app)
-//          .get('/stylesheets/application.css')
-//          .end(function (err, res) {
-//            should.not.exist(err);
-//
-//            res.headers['content-type'].should.match(/^text\/css/);
-//            res.headers['content-length'].should.equal('30');
-//
-//            res.text.should.equal(fs.readFileSync(app.root + '/public/stylesheets/application.css').toString());
-//
-//            utils.ensureDirClean(cssDir);
-//            done();
-//          });
+
+      request(app)
+          .get('/stylesheets/application.css')
+          .end(function (err, res) {
+            should.not.exist(err);
+
+            res.headers['content-type'].should.match(/^text\/css/);
+            res.headers['content-length'].should.equal('30');
+
+            res.text.should.equal(fs.readFileSync(app.root + '/public/stylesheets/application.css').toString());
+
+            utils.ensureDirClean(cssDir);
+            done();
+          });
     });
 
 
