@@ -1,11 +1,12 @@
 ## Assets compiler for CompoundJS [<img src="https://secure.travis-ci.org/compoundjs/assets-compiler.png" />](http://travis-ci.org/#!/compoundjs/assets-compiler)
 
-This package adds middleware for assets compilation. Supported asset types:
+This package adds middleware for assets compilation & minifying. Supported asset types:
 
 - less
 - stylus
 - sass
 - coffee-script
+- javascript
 
 ## Installation
 
