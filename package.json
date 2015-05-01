@@ -10,17 +10,17 @@
     "uglify-js": ">= 2.2.5"
   },
   "devDependencies": {
-    "coffee-script": "^1.9.2",
+    "coffee-script": "~1.9.2",
     "compound": "1.x",
     "express": "3.x",
-    "less": "^1.7.5",
-    "mocha": "^2.2.4",
-    "node-sass": "^2.1.1",
-    "sass": "^0.5.0",
-    "semicov": "^0.1.1-2",
-    "should": "^6.0.1",
-    "stylus": "^0.51.1",
-    "supertest": "^0.15.0"
+    "less": "~1.7.5",
+    "mocha": "~2.2.4",
+    "node-sass": "~2.1.1",
+    "sass": "~0.5.0",
+    "semicov": "~0.1.1-2",
+    "should": "~6.0.1",
+    "stylus": "~0.51.1",
+    "supertest": "~0.15.0"
   },
   "repository": "",
   "keywords": [
