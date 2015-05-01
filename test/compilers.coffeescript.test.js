@@ -34,7 +34,7 @@ describe('assets-compiler', function() {
           should.not.exist(err);
 
           res.headers['content-type'].should.match(/^application\/javascript/);
-          res.headers['content-length'].should.equal('61');
+          res.headers['content-length'].should.equal('60');
 
           res.text.should.equal(fs.readFileSync(app.root + '/public/javascripts/application.js').toString());
 
